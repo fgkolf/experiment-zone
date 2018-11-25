@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TestPopup from './TestPopup';
+import TestFileSaver from './TestFileSaver';
+
+const params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=0,height=0,left=-1000,top=-1000`;
 
 class App extends Component {
   render() {
@@ -11,14 +16,11 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <button onClick={() => { window.open("http://www.google.com", "someName", params) }}>
+            Native popup
+          </button>
+          <TestPopup />
+          <TestFileSaver />
         </header>
       </div>
     );
